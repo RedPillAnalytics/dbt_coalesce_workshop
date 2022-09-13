@@ -1,0 +1,6 @@
+version: 2
+
+models:
+  - name: stg_school_learning_modalities
+    description: ""
+    columns:
