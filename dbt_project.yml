@@ -26,7 +26,16 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 models:
   dbt_coalesce_workshop:
+    inspection:
+      schema: staging
+      +materialized: table
     intermediate:
+      schema: staging
       +materialized: view
-    stage:
+    marts:
+      operations:
+        schema: operations
+        +materialized: table
+    staging:
+      schema: staging
       +materialized: view

@@ -4,4 +4,7 @@ sources:
   - name: raw
     tables:
       - name: school_learning_modalities
-        description: ""
+  
+  - name: sftp
+    tables:
+      - name: school_learning_modalities
