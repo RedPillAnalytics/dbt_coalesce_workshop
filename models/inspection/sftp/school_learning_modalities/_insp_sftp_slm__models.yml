@@ -1,0 +1,8 @@
+version: 2
+
+models:
+  - name: insp_sftp_school_learning_modalities
+  - name: insp_sftp_slm_district_nces_id_not_null
+  - name: insp_sftp_slm_district_nces_id_numbers_only
+  - name: insp_sftp_slm_learning_modality_accepted_values
+  - name: insp_sftp_slm_week_all_in_quarter

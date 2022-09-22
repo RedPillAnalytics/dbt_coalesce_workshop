@@ -1,6 +1,6 @@
 with source as (
 
-    select * from {{ source('sftp', 'school_learning_modalities') }}
+    select * from {{ source('raw', 'school_learning_modalities') }}
 
 ),
 

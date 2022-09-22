@@ -1,8 +1,0 @@
-version: 2
-
-models:
-  - name: int_districts
-    description: ""
-    # columns:
-    #   - district_nces_id
-    #   - district_name

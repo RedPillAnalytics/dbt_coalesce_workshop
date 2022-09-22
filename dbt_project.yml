@@ -27,15 +27,26 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   dbt_coalesce_workshop:
     inspection:
-      schema: staging
+      schema: inspection
       +materialized: table
     intermediate:
-      schema: staging
+      schema: intermediate
       +materialized: view
-    marts:
-      operations:
-        schema: operations
-        +materialized: table
     staging:
       schema: staging
       +materialized: view
+  # dbt_date_integration_tests:
+  #   schema: staging_tests
+  #   materialized: table
+
+tests:
+  dbt_coalesce_workshop:
+    inspection:
+      +severity: warn
+
+vars:
+    # dbt_date:
+    dbt_date_dispatch_list: ['dbt_date_integration_tests']
+    "dbt_date:time_zone": "America/Chicago"
+    "dbt_date:start_date": "2021-01-01"
+    "dbt_date:end_date": "2023-01-01" # this is limited by next day calculation so need to be the start of a new year to include last day of previous year

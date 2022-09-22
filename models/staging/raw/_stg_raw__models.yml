@@ -1,0 +1,4 @@
+version: 2
+
+models:
+  - name: stg_raw_school_learning_modalities
