@@ -9,6 +9,8 @@ final as (
     select
         fivetran_file,
         fivetran_line,
+        district_nces_id,
+        week,
         district_nces_id as rejected_value,
         'district_nces_id is null' as rejected_reason
     from source
