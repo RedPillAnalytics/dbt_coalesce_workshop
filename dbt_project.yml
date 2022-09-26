@@ -33,8 +33,8 @@ models:
       schema: intermediate
       +materialized: view
     marts:
-      opeartions:
-        schmea: operations
+      operations:
+        schema: operations
         +materialized: table
     staging:
       schema: staging

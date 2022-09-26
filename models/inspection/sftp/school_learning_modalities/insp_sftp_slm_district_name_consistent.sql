@@ -18,7 +18,7 @@ count_district_names as (
         quarter
     having count(1) > 1
 
-)
+),
 
 final as (
 

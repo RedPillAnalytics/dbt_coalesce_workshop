@@ -6,5 +6,12 @@ with slm as (
 
 ),
 
+final as (
+    
+    select
+        *
+    from slm
 
+)
 
+select * from final

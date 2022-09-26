@@ -28,7 +28,8 @@ duplicates as (
         state,
         zip_code
     having count(1) > 1
-)
+
+),
 
 final as (
 
@@ -44,10 +45,13 @@ final as (
             ) as rejected_value,
         'duplicated row' as rejected_reason
     from source
-    inner join duplicates on (
-        district_nces_id = district_nces_id
-        district_name = district_name
-        week = week
+    where exists (
+        select 1
+        from duplicates
+        where 
+            source.district_nces_id = duplicates.district_nces_id
+            and source.district_name = duplicates.district_name
+            and source.week = duplicates.week
     )
 
 )

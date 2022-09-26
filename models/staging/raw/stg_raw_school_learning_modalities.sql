@@ -4,7 +4,7 @@ with source as (
 
 ),
 
-renamed as (
+filtered as (
 
     select
         district_nces_id,
@@ -16,9 +16,9 @@ renamed as (
         city,
         state,
         zip_code
-
     from source
+    where week < to_date('2022-01-01', 'YYYY-MM-DD')
 
 )
 
-select * from renamed
+select * from filtered
