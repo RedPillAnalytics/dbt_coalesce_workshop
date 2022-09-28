@@ -1,14 +1,6 @@
-with source as (
-
-    select * from {{ ref('stg_sftp_school_learning_modalities') }}
-
-),
-
-calendar_week as (
-    
-    select * from {{ ref('int_conformed_calendar_week') }}
-
-),
+with
+source          as (select * from {{ ref('stg_sftp_school_learning_modalities') }}),
+calendar_week   as (select * from {{ ref('int_conformed_calendar_week') }}),
 
 source_with_quarter as (
 

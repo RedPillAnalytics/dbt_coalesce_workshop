@@ -1,14 +1,7 @@
-with source as (
-
-    select * from {{ ref('stg_sftp_school_learning_modalities') }}
-
-),
-
-calendar_week as (
-    
-    select * from {{ ref('int_conformed_calendar_week') }}
-
-),
+with 
+source          as (select * from {{ ref('stg_sftp_school_learning_modalities') }}),
+calendar_day    as (select * from {{ ref('int_conformed_calendar_day') }}),
+calendar_week   as (select * from {{ ref('int_conformed_calendar_week') }}),
 
 final as (
 
@@ -18,12 +11,14 @@ final as (
         district_nces_id,
         week,
         week as rejected_value,
-        'week provided is not an iso_week_start_date' as rejected_reason
+        'week provided is not the expected week start date of ' || calendar_day.week_start_date as rejected_reason
     from source
+    left outer join calendar_day on
+        source.week = calendar_day.date_day
     where not exists (
         select 1
         from calendar_week
-        where source.week = calendar_week.iso_week_start_date
+        where source.week = calendar_week.week_start_date
     )
 
 )

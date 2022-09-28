@@ -1,8 +1,5 @@
-with source as (
-
-    select * from {{ ref('stg_sftp_school_learning_modalities') }}
-
-),
+with 
+source as (select * from {{ ref('stg_sftp_school_learning_modalities') }}),
 
 {# Get all the columns -#}
 {%- set cols = ['district_nces_id', 'district_name', 'week','learning_modality', 'operational_schools', 'student_count', 'city', 'state', 'zip_code'] -%}
