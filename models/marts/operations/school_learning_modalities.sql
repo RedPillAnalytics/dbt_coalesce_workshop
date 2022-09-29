@@ -18,8 +18,8 @@ current_inspected as (
         select 1
         from inspection
         where 
-            curr.fivetran_file = insp.fivetran_file
-            and curr.fivetran_line = insp.fivetran_line
+            curr.fivetran_file = inspection.fivetran_file
+            and curr.fivetran_line = inspection.fivetran_line
     )
 
 ),

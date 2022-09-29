@@ -9,7 +9,7 @@ filtered as (
     select
         district_nces_id,
         district_name,
-        week,
+        to_date(week) as week,
         learning_modality,
         operational_schools,
         student_count,
