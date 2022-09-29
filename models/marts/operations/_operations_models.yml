@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: districts_with_changing_modalities
+
+  - name: learning_modalities_by_quarter_all
+    description: ""
+    columns:
+      - name: quarter_start_date
+        description: ""
+
+      - name: learning_modality
+        description: ""
+
+      - name: num_students
+        description: ""
+
+  - name: learning_modalities_by_quarter
+    description: ""
+    columns:
+      - name: quarter_start_date
+        description: ""
+
+      - name: learning_modality
+        description: ""
+
+      - name: num_students
+        description: ""
