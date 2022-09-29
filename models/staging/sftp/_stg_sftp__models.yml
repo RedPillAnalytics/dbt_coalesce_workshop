@@ -2,3 +2,43 @@ version: 2
 
 models:
   - name: stg_sftp_school_learning_modalities
+    description: ""
+    columns:
+      - name: fivetran_file
+        description: ""
+
+      - name: fivetran_line
+        description: ""
+
+      - name: fivetran_modified
+        description: ""
+
+      - name: fivetran_synced
+        description: ""
+
+      - name: district_nces_id
+        description: ""
+
+      - name: district_name
+        description: ""
+
+      - name: week
+        description: ""
+
+      - name: learning_modality
+        description: ""
+
+      - name: operational_schools
+        description: ""
+
+      - name: student_count
+        description: ""
+
+      - name: city
+        description: ""
+
+      - name: state
+        description: ""
+
+      - name: zip_code
+        description: ""

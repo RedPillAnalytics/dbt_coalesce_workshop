@@ -1,8 +1,5 @@
-with source as (
-
-    select * from {{ source('raw', 'school_learning_modalities') }}
-
-),
+with
+source as (select * from {{ source('raw', 'school_learning_modalities') }}),
 
 filtered as (
 

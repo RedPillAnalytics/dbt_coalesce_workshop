@@ -1,7 +1,7 @@
 
 
 with
-slm as (select * from {{ ref('school_learning_modalities') }}),
+slm as (select * from {{ ref('int_school_learning_modalities') }}),
 
 final as (
     

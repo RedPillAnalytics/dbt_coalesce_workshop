@@ -1,0 +1,8 @@
+version: 2
+
+models:
+  - name: int_school_learning_modalities_all
+    description: Unions 2021 and current data without inspection.
+
+  - name: int_school_learning_modalities
+    description: Unions 2021 and current data with inspection.

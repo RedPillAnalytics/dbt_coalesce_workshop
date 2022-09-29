@@ -3,9 +3,12 @@ version: 2
 models:
   - name: int_conformed_calendar_day
     description: All dates of the year with associated week, month, quarter, plus all prior.
+
   - name: int_conformed_calendar_month
     description: All starting dates of months for the year
+
   - name: int_conformed_calendar_quarter
     description: All starting dates of the quarters of the year
+
   - name: int_conformed_calendar_week
     description: All startin dates of the weeks of the year

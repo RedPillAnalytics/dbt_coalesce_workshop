@@ -1,5 +1,5 @@
 with
-slm             as (select * from {{ ref('school_learning_modalities') }}),
+slm             as (select * from {{ ref('int_school_learning_modalities') }}),
 calendar_day    as (select * from {{ ref('int_conformed_calendar_day') }}),
 
 final as (

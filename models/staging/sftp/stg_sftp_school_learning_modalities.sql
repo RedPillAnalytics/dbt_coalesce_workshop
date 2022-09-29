@@ -1,8 +1,5 @@
-with source as (
-
-    select * from {{ source('sftp', 'school_learning_modalities') }}
-
-),
+with 
+source as (select * from {{ source('sftp', 'school_learning_modalities') }}),
 
 renamed as (
 
