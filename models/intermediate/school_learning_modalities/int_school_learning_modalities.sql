@@ -6,20 +6,19 @@
 }}
 
 with
-slm_2021    as ( select * from {{ ref('stg_raw_school_learning_modalities') }} ),
-curr        as ( select * from {{ ref('stg_sftp_school_learning_modalities') }} ),
-inspection  as ( select * from {{ ref('insp_sftp_school_learning_modalities') }} ),
+slm         as ( select * from {{ ref('int_school_learning_modalities_all') }} ),
+inspection  as ( select * from {{ ref('insp_sftp_slm_main') }} ),
 
 {# Use inspection layer to remove erroneous data #}
 current_inspected as (
 
-    select * from curr
+    select * from slm
     where not exists (
         select 1
         from inspection
         where 
-            curr.fivetran_file = inspection.fivetran_file
-            and curr.fivetran_line = inspection.fivetran_line
+            slm.fivetran_file = inspection.fivetran_file
+            and slm.fivetran_line = inspection.fivetran_line
     )
 
 ),
@@ -27,22 +26,7 @@ current_inspected as (
 final as (
     
     select
-        md5(district_nces_id || week) as row_key,
-        district_nces_id,
-        district_name,
-        week,
-        learning_modality,
-        operational_schools,
-        student_count,
-        city,
-        state,
-        zip_code
-    from slm_2021
-    
-    union all
-
-    select
-        md5(district_nces_id || week) as row_key,
+        row_key,
         district_nces_id,
         district_name,
         week,

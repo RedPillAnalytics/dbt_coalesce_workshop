@@ -12,6 +12,8 @@ final as (
     
     select
         md5(district_nces_id || week) as row_key,
+        null as fivetran_file,
+        null as fivetran_line,
         district_nces_id,
         district_name,
         week,
@@ -27,6 +29,8 @@ final as (
 
     select
         md5(district_nces_id || week) as row_key,
+        fivetran_file,
+        fivetran_line,
         district_nces_id,
         district_name,
         week,
