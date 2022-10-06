@@ -73,27 +73,6 @@ models:
       - name: rejected_reason
         description: ""
 
-  - name: insp_sftp_slm_district_nces_id_numbers_only
-    description: ""
-    columns:
-      - name: fivetran_file
-        description: ""
-
-      - name: fivetran_line
-        description: ""
-
-      - name: district_nces_id
-        description: ""
-
-      - name: week
-        description: ""
-
-      - name: rejected_value
-        description: ""
-
-      - name: rejected_reason
-        description: ""
-
   - name: insp_sftp_slm_duplicates
     description: ""
     columns:
