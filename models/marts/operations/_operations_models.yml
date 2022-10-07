@@ -1,9 +1,9 @@
 version: 2
 
 models:
-  - name: districts_with_changing_modalities
-
   - name: learning_modalities_by_quarter_all
+    config:
+      tags: ['inspection_false']
     description: ""
     columns:
       - name: quarter_start_date
@@ -15,10 +15,40 @@ models:
       - name: num_students
         description: ""
 
-  - name: learning_modalities_by_quarter
+  - name: learning_modalities_by_quarter_inspected
+    config:
+      tags: ['inspection_true']
     description: ""
     columns:
       - name: quarter_start_date
+        description: ""
+
+      - name: learning_modality
+        description: ""
+
+      - name: num_students
+        description: ""
+
+  - name: learning_modalities_by_month_all
+    config:
+      tags: ['inspection_false']
+    description: ""
+    columns:
+      - name: month_start_date
+        description: ""
+
+      - name: learning_modality
+        description: ""
+
+      - name: num_students
+        description: ""
+
+  - name: learning_modalities_by_month_inspected
+    config:
+      tags: ['inspection_true']
+    description: ""
+    columns:
+      - name: month_start_date
         description: ""
 
       - name: learning_modality
