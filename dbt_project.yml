@@ -29,6 +29,7 @@ models:
     inspection:
       schema: inspection
       +materialized: table
+      +tags: ['inspection_true']
     intermediate:
       schema: intermediate
       +materialized: view

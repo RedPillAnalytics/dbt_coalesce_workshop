@@ -6,7 +6,7 @@
 }}
 
 with
-slm         as ( select * from {{ ref('int_school_learning_modalities_all') }} ),
+slm         as ( select * from {{ ref('stg_sftp_school_learning_modalities') }} ),
 inspection  as ( select * from {{ ref('insp_sftp_slm_main') }} ),
 
 {# Use inspection layer to remove erroneous data #}

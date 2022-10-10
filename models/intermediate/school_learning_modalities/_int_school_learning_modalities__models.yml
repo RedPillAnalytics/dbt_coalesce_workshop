@@ -6,61 +6,38 @@ models:
     description: Data without inspection.
     columns:
       - name: row_key
-        description: ""
         tests:
           - not_null
           - unique
-
       - name: fivetran_file
-        description: ""
-
       - name: fivetran_line
-        description: ""
-
       - name: district_nces_id
-        description: ""
         tests:
           - not_null
-
       - name: district_name
-        description: ""
         tests:
           - not_null
-
       - name: week
-        description: ""
         tests:
           - not_null
-
       - name: learning_modality
-        description: ""
         tests:
           - not_null
           - accepted_values:
               values: ['In Person', 'Hybrid', 'Remote']
-
       - name: operational_schools
-        description: ""
         tests:
           - not_null
-
       - name: student_count
-        description: ""
         tests:
           - not_null
-
       - name: city
-        description: ""
         tests:
           - not_null
-
       - name: state
-        description: ""
         tests:
           - not_null
-
       - name: zip_code
-        description: ""
         tests:
           - not_null
 
@@ -69,60 +46,37 @@ models:
     description: Data with inspection.
     columns:
       - name: row_key
-        description: ""
         tests:
           - not_null
           - unique
-
       - name: fivetran_file
-        description: ""
-
       - name: fivetran_line
-        description: ""
-
       - name: district_nces_id
-        description: ""
         tests:
           - not_null
-
       - name: district_name
-        description: ""
         tests:
           - not_null
-
       - name: week
-        description: ""
         tests:
           - not_null
-
       - name: learning_modality
-        description: ""
         tests:
           - not_null
           - accepted_values:
               values: ['In Person', 'Hybrid', 'Remote']
-
       - name: operational_schools
-        description: ""
         tests:
           - not_null
-
       - name: student_count
-        description: ""
         tests:
           - not_null
-
       - name: city
-        description: ""
         tests:
           - not_null
-
       - name: state
-        description: ""
         tests:
           - not_null
-
       - name: zip_code
-        description: ""
         tests:
           - not_null

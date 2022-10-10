@@ -13,8 +13,7 @@ renamed as (
         to_date(week) as week,
         learning_modality,
         operational_schools,
-        {#- nvl(student_count, 0) as student_count, -#}
-        student_count,
+        nvl(student_count, 0) as student_count,
         city,
         state,
         zip_code
