@@ -29,13 +29,16 @@ models:
     inspection:
       schema: inspection
       +materialized: table
+      +tags: ['inspection_true']
     intermediate:
       schema: intermediate
       +materialized: view
+      +transient: false
     marts:
       operations:
         schema: operations
         +materialized: table
+        +transient: false
     staging:
       schema: staging
       +materialized: view
@@ -47,6 +50,7 @@ tests:
   dbt_coalesce_workshop:
     inspection:
       +severity: warn
+      +tags: ['inspection_true']
 
 vars:
     # dbt_date:

@@ -1,3 +1,9 @@
+{{-
+    config(
+        tags=['inspection_false']
+    )
+-}}
+
 with
 source as (select * from {{ ref('stg_sftp_school_learning_modalities') }}),
 
@@ -9,10 +15,10 @@ final as (
         district_nces_id,
         week,
         district_nces_id as rejected_value,
-        'district_nces_id is null' as rejected_reason
+        'district_nces_id is not all numbers' as rejected_reason
     from source
-    where district_nces_id is null
-    
+    where regexp_like(district_nces_id, '.*[^0-9].*')
+
 )
 
 select * from final

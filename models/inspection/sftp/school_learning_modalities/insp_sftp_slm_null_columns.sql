@@ -8,14 +8,14 @@ final as (
 
 {%- for col in cols %}
 
-{%- set reject_reason = "'" ~ col ~ " cannot be null" ~ "'" %}
+{%- set reject_reason = "'" ~ col ~ " column cannot be null" ~ "'" %}
 
     select
         fivetran_file,
         fivetran_line,
         district_nces_id,
         week,
-        {{col}}::varchar as rejected_value,
+        '{{col}}' as rejected_value,
         {{reject_reason}} as rejected_reason
     from source
     where {{col}} is null

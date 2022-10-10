@@ -2,7 +2,81 @@ version: 2
 
 models:
   - name: int_school_learning_modalities_all
-    description: Unions 2021 and current data without inspection.
+    tags: ['inspection_false']
+    description: Data without inspection.
+    columns:
+      - name: row_key
+        tests:
+          - not_null
+          - unique
+      - name: fivetran_file
+      - name: fivetran_line
+      - name: district_nces_id
+        tests:
+          - not_null
+      - name: district_name
+        tests:
+          - not_null
+      - name: week
+        tests:
+          - not_null
+      - name: learning_modality
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['In Person', 'Hybrid', 'Remote']
+      - name: operational_schools
+        tests:
+          - not_null
+      - name: student_count
+        tests:
+          - not_null
+      - name: city
+        tests:
+          - not_null
+      - name: state
+        tests:
+          - not_null
+      - name: zip_code
+        tests:
+          - not_null
 
   - name: int_school_learning_modalities
-    description: Unions 2021 and current data with inspection.
+    tags: ['inspection_true']
+    description: Data with inspection.
+    columns:
+      - name: row_key
+        tests:
+          - not_null
+          - unique
+      - name: fivetran_file
+      - name: fivetran_line
+      - name: district_nces_id
+        tests:
+          - not_null
+      - name: district_name
+        tests:
+          - not_null
+      - name: week
+        tests:
+          - not_null
+      - name: learning_modality
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['In Person', 'Hybrid', 'Remote']
+      - name: operational_schools
+        tests:
+          - not_null
+      - name: student_count
+        tests:
+          - not_null
+      - name: city
+        tests:
+          - not_null
+      - name: state
+        tests:
+          - not_null
+      - name: zip_code
+        tests:
+          - not_null

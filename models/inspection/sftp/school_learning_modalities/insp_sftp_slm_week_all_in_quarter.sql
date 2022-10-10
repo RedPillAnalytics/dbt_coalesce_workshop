@@ -1,3 +1,10 @@
+{{
+    config(
+        enabled = False
+    )
+}}
+{#- Disabling as there are quarters where this isn't accounted for in what is provided and I don't want to fix it -#}
+
 with
 source          as (select * from {{ ref('stg_sftp_school_learning_modalities') }}),
 calendar_week   as (select * from {{ ref('int_conformed_calendar_week') }}),

@@ -6,7 +6,7 @@
 }}
 
 with
-slm         as ( select * from {{ ref('int_school_learning_modalities_all') }} ),
+slm         as ( select * from {{ ref('stg_sftp_school_learning_modalities') }} ),
 inspection  as ( select * from {{ ref('insp_sftp_slm_main') }} ),
 
 {# Use inspection layer to remove erroneous data #}
@@ -17,8 +17,8 @@ current_inspected as (
         select 1
         from inspection
         where 
-            curr.fivetran_file = inspection.fivetran_file
-            and curr.fivetran_line = inspection.fivetran_line
+            slm.fivetran_file = inspection.fivetran_file
+            and slm.fivetran_line = inspection.fivetran_line
     )
 
 ),
@@ -26,7 +26,9 @@ current_inspected as (
 final as (
     
     select
-        row_key,
+        md5(district_nces_id || week) as row_key,
+        fivetran_file,
+        fivetran_line,
         district_nces_id,
         district_name,
         week,

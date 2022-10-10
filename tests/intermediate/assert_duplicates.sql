@@ -1,3 +1,9 @@
+{{-
+    config(
+        tags=['inspection_false']
+    )
+-}}
+
 with 
 source as (select * from {{ ref('stg_sftp_school_learning_modalities') }}),
 
